@@ -1,0 +1,21 @@
+name: Deploy to cPanel
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code 🚚
+        uses: actions/checkout@v3
+
+      - name: Upload to cPanel 📂
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.103.160.106.28 }}
+          username: ${{ secrets.iminate@propyards.in }}
+          password: ${{ secrets.Pspace@123 }}
